@@ -587,7 +587,7 @@ contract aiUSDT is ERC20, ERC20Detailed {
     // Used to swap any borrowed reserve over the debt limit to liquidate to 'token'
     function harvest(address reserve, uint256 amount) external {
         require(msg.sender == controller, "!controller");
-        // require(reserve != address(token), "token");
+        require(reserve != address(token), "token");
         //IERC20(reserve).safeTransfer(0x3e0cb4b0c6F81f8dd28e517c5C7B6dcF9d9bDb08, amount);
         IERC20(reserve).safeTransfer(controller, amount);
     }
