@@ -289,7 +289,7 @@ contract aiUSDT is ERC20, ERC20Detailed {
     }
     
     function balance() public view returns (uint) {
-        return token.balanceOf(address(this));
+        return token.balanceOf(address(this))
                 .add(Controller(controller).balanceOf(address(token)));
     }
     
