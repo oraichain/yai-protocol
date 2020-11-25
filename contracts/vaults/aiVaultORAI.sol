@@ -512,7 +512,7 @@ contract aiORAI is ERC20, ERC20Detailed {
     }
 
     function setRewardAddress(address _address) external {
-        require(msg.sender == goversnance, "!governance");
+        require(msg.sender == governance, "!governance");
         rewardAddress = address(_address);
     }
 
